@@ -1,4 +1,4 @@
-package com.douglas.android.carageapp
+package com.douglas.android.garageapp
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

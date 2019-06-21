@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 apply from: '../config/android-common.gradle'
 apply from: '../config/common.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -34,9 +36,13 @@ dependencies {
 
     // external dependencies
     implementation ProjectDependencies.supportAppCompat
-    implementation ProjectDependencies.supportDesign
+    implementation ProjectDependencies.coreAndroidX
     implementation ProjectDependencies.recyclerView
     implementation ProjectDependencies.lifecycle
+    implementation ProjectDependencies.materialDesign
+    implementation ProjectDependencies.constraintLayout
+    implementation ProjectDependencies.anko
+
 
     testImplementation ProjectDependencies.lifecycleTesting
 }

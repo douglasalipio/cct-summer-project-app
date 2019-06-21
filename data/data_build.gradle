@@ -15,14 +15,14 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField 'String', "AppId", ""
-            buildConfigField 'String', "AppKey", ""
+            //buildConfigField 'String', "AppId", ""
+           // buildConfigField 'String', "AppKey", ""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-            buildConfigField 'String', "AppId", ""
-            buildConfigField 'String', "AppKey", ""
+           // buildConfigField 'String', "AppId", ""
+           // buildConfigField 'String', "AppKey", ""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
