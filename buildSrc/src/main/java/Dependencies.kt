@@ -31,6 +31,9 @@ object ProjectDependencies {
     val coreAndroidX = "androidx.core:core-ktx:${Versions.coreAndroidX}"
     val cardView = "androidx.cardview:cardview:1.0.0${Versions.cardView}"
     val anko = "org.jetbrains.anko:anko:${Versions.anko}"
+    val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
 
     val junit = "junit:junit:${Versions.junit}"
     val assertJ = "org.assertj:assertj-core:${Versions.assertJ}"
@@ -39,11 +42,7 @@ object ProjectDependencies {
     val androidTestRunner = "androidx.test:runner:${Versions.androidTestRunner}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     val kakao = "com.agoda.kakao:kakao:${Versions.kakao}"
-
-    val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     val lifecycleTesting = "androidx.arch.core:core-testing:${Versions.lifecycle}"
-
-
 }
 
 object Versions {
@@ -60,6 +59,7 @@ object Versions {
     val coreAndroidX = "1.0.2"
     val cardView = "1.0.0"
     val anko = "0.10.8"
+    val navigation = "2.1.0-alpha05"
 
     val supportLibrary = "1.0.0"
     val kotlin = "1.3.0"

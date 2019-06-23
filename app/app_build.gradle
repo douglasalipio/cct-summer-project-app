@@ -4,6 +4,8 @@ apply from: '../config/android-common.gradle'
 apply from: '../config/common.gradle'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -42,7 +44,9 @@ dependencies {
     implementation ProjectDependencies.materialDesign
     implementation ProjectDependencies.constraintLayout
     implementation ProjectDependencies.anko
+    implementation ProjectDependencies.navigation
+    implementation ProjectDependencies.navigationUi
 
-
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation ProjectDependencies.lifecycleTesting
 }
