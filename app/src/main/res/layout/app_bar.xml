@@ -21,25 +21,4 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <fragment
-            android:id="@+id/navHostFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:itemIconTint="@android:color/white"
-            app:itemTextColor="@android:color/white"
-            android:background="@color/colorPrimary"
-            app:menu="@menu/bottom_menu"
-            />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -30,10 +30,18 @@
     <fragment
             android:id="@+id/vehicleFragment"
             android:name="com.douglas.android.garageapp.vehicle.VehicleFragment"
-            android:label="VehicleFragment"/>
+            android:label="VehicleFragment">
+        <action
+                android:id="@+id/action_vehicleFragment_to_vehicleDetailFragment"
+                app:destination="@id/vehicleDetailFragment"/>
+    </fragment>
     <fragment
             android:id="@+id/settingsFragment"
             android:name="com.douglas.android.garageapp.receipt.ReceiptFragment"
             android:label="SettingsFragment"/>
+    <fragment
+            android:id="@+id/vehicleDetailFragment"
+            android:name="com.douglas.android.garageapp.vehicle.VehicleDetailFragment"
+            android:label="VehicleDetailFragment"/>
 
 </navigation>
