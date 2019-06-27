@@ -32,7 +32,7 @@
             android:name="com.douglas.android.garageapp.vehicle.VehicleFragment"
             android:label="VehicleFragment">
         <action
-                android:id="@+id/action_vehicleFragment_to_vehicleDetailFragment"
+                android:id="@+id/vehicleFragment_to_vehicleDetailFragment"
                 app:destination="@id/vehicleDetailFragment"/>
     </fragment>
     <fragment

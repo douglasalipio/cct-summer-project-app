@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
-
 android {
     compileSdkVersion Versions.compileSdk
     defaultConfig {
@@ -46,6 +45,7 @@ dependencies {
     implementation ProjectDependencies.anko
     implementation ProjectDependencies.navigation
     implementation ProjectDependencies.navigationUi
+    implementation ProjectDependencies.groupie
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation ProjectDependencies.lifecycleTesting

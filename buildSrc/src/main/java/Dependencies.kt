@@ -43,6 +43,9 @@ object ProjectDependencies {
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     val kakao = "com.agoda.kakao:kakao:${Versions.kakao}"
     val lifecycleTesting = "androidx.arch.core:core-testing:${Versions.lifecycle}"
+
+    val groupie = "com.xwray:groupie:${Versions.groupie}"
+    val groupieExtension = "com.xwray:groupie-kotlin-android-extensions:${Versions.groupie}"
 }
 
 object Versions {
@@ -79,4 +82,5 @@ object Versions {
     val mockito = "2.18.0"
     val mockitoKotlin = "1.5.0"
     val kakao = "1.4.0"
+    val groupie = "2.3.0"
 }
