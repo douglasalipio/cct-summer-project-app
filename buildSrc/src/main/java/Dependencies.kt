@@ -46,6 +46,9 @@ object ProjectDependencies {
 
     val groupie = "com.xwray:groupie:${Versions.groupie}"
     val groupieExtension = "com.xwray:groupie-kotlin-android-extensions:${Versions.groupie}"
+
+    val affolestadBottomSheet = "com.afollestad.material-dialogs:bottomsheets:${Versions.affolestad}"
+    val wdullaerDatePicker = "com.wdullaer:materialdatetimepicker:${Versions.wdulaer}"
 }
 
 object Versions {
@@ -53,12 +56,13 @@ object Versions {
 
     val compileSdk = 28
     val targetSdk = 27
-    val minSdkVersion = 21
+    val minSdkVersion = 24
     val releaseVersionCode = 2
     val releaseVersionName = "1.0.1"
+    val java = 1.8
 
     val constraintLayout = "1.1.3"
-    val materialDesign = "1.0.0"
+    val materialDesign = "1.1.0-alpha07"
     val coreAndroidX = "1.0.2"
     val cardView = "1.0.0"
     val anko = "0.10.8"
@@ -83,4 +87,6 @@ object Versions {
     val mockitoKotlin = "1.5.0"
     val kakao = "1.4.0"
     val groupie = "2.3.0"
+    val affolestad = "3.1.0"
+    val wdulaer = "4.2.1"
 }

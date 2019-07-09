@@ -1,4 +1,4 @@
-package com.douglas.android.garageapp.vehicle
+package com.douglas.android.garageapp.feature.vehicle
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,7 +20,7 @@ class VehicleDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.vehicle_detail_fragment, container, false)
+        return inflater.inflate(R.layout.vehicle_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -8,6 +8,10 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
     compileSdkVersion Versions.compileSdk
+    compileOptions {
+        sourceCompatibility Versions.java
+        targetCompatibility Versions.java
+    }
     defaultConfig {
         applicationId "com.douglas.android.carageapp"
         minSdkVersion Versions.minSdkVersion
@@ -37,13 +41,24 @@ dependencies {
 
     // external dependencies
     implementation ProjectDependencies.supportAppCompat
+
     implementation ProjectDependencies.coreAndroidX
+
     implementation ProjectDependencies.recyclerView
+
     implementation ProjectDependencies.lifecycle
+
     implementation ProjectDependencies.materialDesign
+
     implementation ProjectDependencies.constraintLayout
+
     implementation ProjectDependencies.anko
+
     implementation ProjectDependencies.groupie
+
+    implementation ProjectDependencies.affolestadBottomSheet
+
+    implementation ProjectDependencies.wdullaerDatePicker
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation ProjectDependencies.lifecycleTesting

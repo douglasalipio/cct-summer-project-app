@@ -19,5 +19,17 @@
     <string name="receipt">Receipt</string>
     <string name="register">Register</string>
     <string name="add_vehicle">Add vehicle</string>
+    <string name="booking_service_label">Booking Service</string>
+    <string name="label_mileage">Mileage</string>
+    <string name="vehicle_label">Vehicle</string>
+    <string name="service_plan_label">Service plan</string>
+    <string name="date_label">Date</string>
+    <string name="checkout_label">Checkout</string>
 
+    <string-array name="plans">
+        <item>Annual service €200</item>
+        <item>Major service €189</item>
+        <item>Major repair €100</item>
+        <item>Fault €55</item>
+    </string-array>
 </resources>

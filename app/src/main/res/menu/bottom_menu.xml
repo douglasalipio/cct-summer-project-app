@@ -10,14 +10,6 @@
             app:iconTint="@android:color/white"
             app:showAsAction="ifRoom"/>
 
-
-    <item
-            android:id="@+id/searchLabel"
-            android:icon="@drawable/baseline_search_white_24"
-            app:iconTint="@android:color/white"
-            android:title="@string/receipt"
-            app:showAsAction="ifRoom"/>
-
     <item
             android:id="@+id/settingsLabel"
             android:title="@string/action_settings"
