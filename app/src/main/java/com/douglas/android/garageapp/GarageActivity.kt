@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
 import com.douglas.android.garageapp.feature.book.BookDetailFragment
 import kotlinx.android.synthetic.main.activity_garage.*
 import org.jetbrains.anko.toast
@@ -18,6 +19,7 @@ class GarageActivity : AppCompatActivity() {
     }
 
     private fun initComponent() {
+        tabs.setupWithViewPager(ViewPager(this))
         bookService?.setOnClickListener {
             val bottomNavDrawerFragment = BookDetailFragment()
             bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)

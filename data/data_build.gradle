@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-
 apply from: '../config/android-common.gradle'
 apply from: '../config/common.gradle'
 
@@ -38,4 +37,5 @@ dependencies {
     implementation ProjectDependencies.coroutinesAdapter
     implementation ProjectDependencies.gson
     implementation ProjectDependencies.loggingInterceptor
+    implementation ProjectDependencies.firebase
 }

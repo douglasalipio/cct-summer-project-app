@@ -5,6 +5,7 @@ apply from: '../config/common.gradle'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -13,7 +14,7 @@ android {
         targetCompatibility Versions.java
     }
     defaultConfig {
-        applicationId "com.douglas.android.carageapp"
+        applicationId "com.douglas.android.garageapp"
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdk
         versionCode Versions.releaseVersionCode
@@ -41,25 +42,21 @@ dependencies {
 
     // external dependencies
     implementation ProjectDependencies.supportAppCompat
-
     implementation ProjectDependencies.coreAndroidX
-
     implementation ProjectDependencies.recyclerView
-
     implementation ProjectDependencies.lifecycle
-
     implementation ProjectDependencies.materialDesign
-
     implementation ProjectDependencies.constraintLayout
-
     implementation ProjectDependencies.anko
-
     implementation ProjectDependencies.groupie
-
     implementation ProjectDependencies.affolestadBottomSheet
-
     implementation ProjectDependencies.wdullaerDatePicker
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     testImplementation ProjectDependencies.lifecycleTesting
 }

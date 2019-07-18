@@ -49,6 +49,7 @@ object ProjectDependencies {
 
     val affolestadBottomSheet = "com.afollestad.material-dialogs:bottomsheets:${Versions.affolestad}"
     val wdullaerDatePicker = "com.wdullaer:materialdatetimepicker:${Versions.wdulaer}"
+    val firebase = "com.google.firebase:firebase-core:${Versions.firebase}"
 }
 
 object Versions {
@@ -78,6 +79,7 @@ object Versions {
     val ktlint = "0.20.0"
     val koin = "1.0.1"
     val lifecycle = "2.0.0-rc01"
+    val firebase = "17.0.0"
 
     val junit = "4.12"
     val androidTestRunner = "1.1.0"
