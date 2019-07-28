@@ -20,30 +20,14 @@ import org.jetbrains.anko.toolbar
 
 class GarageActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_garage)
         setSupportActionBar(toolbar)
-       // appBarConfiguration = AppBarConfiguration(navHostFragment.findNavController().graph)
-        bottomView.setupWithNavController(navHostFragment.findNavController())
+        setupWithNavController(bottomView, navHostFragment.findNavController())
 
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(navHostFragment.findNavController())
-                || super.onOptionsItemSelected(item)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val retValue = super.onCreateOptionsMenu(menu)
-        navHostFragment?.let {
-            menuInflater.inflate(R.menu.bottom_menu, menu)
-            return true
-        }
-        return retValue
     }
 
     override fun onSupportNavigateUp() = findNavController(navHostFragment).navigateUp()
+
 }
