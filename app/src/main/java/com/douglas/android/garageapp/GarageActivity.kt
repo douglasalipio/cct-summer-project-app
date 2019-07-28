@@ -25,7 +25,6 @@ class GarageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_garage)
         setSupportActionBar(toolbar)
         setupWithNavController(bottomView, navHostFragment.findNavController())
-
     }
 
     override fun onSupportNavigateUp() = findNavController(navHostFragment).navigateUp()

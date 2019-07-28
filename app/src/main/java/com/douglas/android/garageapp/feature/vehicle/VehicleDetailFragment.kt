@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.douglas.android.garageapp.R
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class VehicleDetailFragment : Fragment() {
-
+class VehicleDetailFragment : BottomSheetDialogFragment() {
 
     fun newInstance(): Fragment {
         return VehicleDetailFragment()
@@ -20,7 +20,7 @@ class VehicleDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.vehicle_fragment, container, false)
+        return inflater.inflate(R.layout.vehicle_detail_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

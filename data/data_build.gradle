@@ -15,13 +15,13 @@ android {
     buildTypes {
         debug {
             //buildConfigField 'String', "AppId", ""
-           // buildConfigField 'String', "AppKey", ""
+            // buildConfigField 'String', "AppKey", ""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-           // buildConfigField 'String', "AppId", ""
-           // buildConfigField 'String', "AppKey", ""
+            // buildConfigField 'String', "AppId", ""
+            // buildConfigField 'String', "AppKey", ""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -38,4 +38,6 @@ dependencies {
     implementation ProjectDependencies.gson
     implementation ProjectDependencies.loggingInterceptor
     implementation ProjectDependencies.firebase
+    // project dependencies
+    implementation project(ProjectModules.domain)
 }

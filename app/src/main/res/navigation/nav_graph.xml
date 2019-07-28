@@ -14,11 +14,19 @@
             android:id="@+id/actionVehicle"
             android:name="com.douglas.android.garageapp.feature.vehicle.VehicleFragment"
             android:label="@string/vehicle_label"
-            tools:layout="@layout/fragment_vehicle"/>
+            tools:layout="@layout/vehicle_fragment">
+        <action
+                android:id="@+id/actionVehicleToVehicleDetailFragment"
+                app:destination="@id/vehicleDetailFragment"/>
+    </fragment>
 
     <fragment
             android:id="@+id/actionReceipt"
             android:name="com.douglas.android.garageapp.feature.receipt.ReceiptFragment"
             android:label="@string/receiptLabel"
             tools:layout="@layout/receipt_fragment"/>
+    <dialog
+            android:id="@+id/vehicleDetailFragment"
+            android:name="com.douglas.android.garageapp.feature.vehicle.VehicleDetailFragment"
+            android:label="VehicleDetailFragment"/>
 </navigation>
