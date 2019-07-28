@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph.xml"
+            app:startDestination="@id/actionHome">
+    <fragment
+            android:id="@+id/actionHome"
+            android:name="com.douglas.android.garageapp.feature.book.BookFragment"
+            android:label="@string/booking_service_label"
+            tools:layout="@layout/book_fragment"/>
+
+    <fragment
+            android:id="@+id/actionVehicle"
+            android:name="com.douglas.android.garageapp.feature.vehicle.VehicleFragment"
+            android:label="@string/vehicle_label"
+            tools:layout="@layout/fragment_vehicle"/>
+
+    <fragment
+            android:id="@+id/actionReceipt"
+            android:name="com.douglas.android.garageapp.feature.receipt.ReceiptFragment"
+            android:label="@string/receiptLabel"
+            tools:layout="@layout/receipt_fragment"/>
+</navigation>

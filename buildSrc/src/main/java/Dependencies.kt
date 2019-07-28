@@ -67,7 +67,7 @@ object Versions {
     val coreAndroidX = "1.0.2"
     val cardView = "1.0.0"
     val anko = "0.10.8"
-    val navigation = "2.1.0-alpha05"
+    val navigation = "2.1.0-beta02"
 
     val supportLibrary = "1.0.0"
     val kotlin = "1.3.0"

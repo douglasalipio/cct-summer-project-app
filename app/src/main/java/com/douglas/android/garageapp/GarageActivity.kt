@@ -4,47 +4,46 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
-import com.douglas.android.garageapp.feature.book.BookDetailFragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_garage.*
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.app_bar.*
+import org.jetbrains.anko.toolbar
 
 class GarageActivity : AppCompatActivity() {
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_garage)
-        setSupportActionBar(bottomBar)
-        initComponent()
-    }
+        setSupportActionBar(toolbar)
+       // appBarConfiguration = AppBarConfiguration(navHostFragment.findNavController().graph)
+        bottomView.setupWithNavController(navHostFragment.findNavController())
 
-    private fun initComponent() {
-        tabs.setupWithViewPager(ViewPager(this))
-        bookService?.setOnClickListener {
-            val bottomNavDrawerFragment = BookDetailFragment()
-            bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.bottom_menu, menu)
-        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-
-            R.id.receiptLabel -> toast(getString(R.string.fav_clicked))
-
-            R.id.settingsLabel -> toast(getString(R.string.settings_clicked))
-
-            android.R.id.home -> {
-                val bottomNavDrawerFragment = GarageSheetDialog()
-                bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
-            }
-        }
-        return true
+        return item.onNavDestinationSelected(navHostFragment.findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val retValue = super.onCreateOptionsMenu(menu)
+        navHostFragment?.let {
+            menuInflater.inflate(R.menu.bottom_menu, menu)
+            return true
+        }
+        return retValue
+    }
+
+    override fun onSupportNavigateUp() = findNavController(navHostFragment).navigateUp()
 }
