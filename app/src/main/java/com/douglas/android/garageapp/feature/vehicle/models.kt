@@ -1,9 +1,9 @@
-package com.douglas.android.data.vehicle.model
+package com.douglas.android.garageapp.feature.vehicle
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class VehicleModel(val uuid: String, val registration: String, val make: String, val model: String, val mileage: String)
+data class VehicleModel(var uuid: String = "", var registration: String, var brand: String, var model: String, var mileage: String)
 
 data class VehicleInfoModel(
     @SerializedName("brand")

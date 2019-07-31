@@ -32,34 +32,16 @@
             tools:layout_editor_absoluteY="273dp">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/loginNameLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/loginName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapCharacters"
-                    />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/loginEmailLayout"
+                android:id="@+id/memberEmailLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
                 android:layout_marginTop="8dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintTop_toBottomOf="@+id/loginNameLayout">
+                app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/loginEmail"
+                    android:id="@+id/memberEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"/>
@@ -67,16 +49,16 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/loginPasswordLayout"
+                android:id="@+id/memberPasswordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:layout_marginTop="8dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintTop_toBottomOf="@+id/loginEmailLayout">
+                app:layout_constraintTop_toBottomOf="@+id/memberEmailLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/loginPassword"
+                    android:id="@+id/memberPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberPassword"/>
@@ -84,29 +66,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-                android:id="@+id/createMemberButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="create account"
+                android:text="@string/register_member"
                 android:background="@color/colorPrimaryDark"
                 android:textColor="@android:color/white"
                 style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                app:layout_constraintTop_toBottomOf="@+id/loginPasswordLayout"
-                app:layout_constraintStart_toStartOf="@+id/loginPasswordLayout"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/memberPasswordLayout"
+                app:layout_constraintStart_toStartOf="@+id/memberPasswordLayout"
+                android:id="@+id/materialButton"/>
 
-        <TextView
-                android:id="@+id/memberLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_message"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/createMemberButton"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -14,7 +14,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/vehicle_model"
+            android:hint="@string/vehicle_brand"
             app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
@@ -31,7 +31,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/vehicle_make"
+            android:hint="@string/vehicle_model"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/vehicleBrandLayout">
 
@@ -45,7 +45,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/vehicleRegister"
+            android:id="@+id/vehicleRegisterLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Register"
@@ -54,6 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/vehicleModelLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/vehicleRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapCharacters"/>
@@ -61,15 +62,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/mileage"
+            android:id="@+id/vehicleMileageLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_mileage"
             android:layout_marginTop="8dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            app:layout_constraintTop_toBottomOf="@+id/vehicleRegister">
+            app:layout_constraintTop_toBottomOf="@+id/vehicleRegisterLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/vehicleMileage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"/>
@@ -77,6 +79,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveVehicleButton"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginTop="15dp"
@@ -84,7 +87,7 @@
             android:background="@color/colorPrimary"
             android:textColor="@color/colorAccent"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            app:layout_constraintTop_toBottomOf="@+id/mileage"
-            app:layout_constraintStart_toStartOf="@+id/mileage"/>
+            app:layout_constraintTop_toBottomOf="@+id/vehicleMileageLayout"
+            app:layout_constraintStart_toStartOf="@+id/vehicleMileageLayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

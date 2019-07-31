@@ -61,7 +61,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/mileage"
+            android:id="@+id/vehicleMileage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_mileage"
@@ -84,7 +84,7 @@
             android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            app:layout_constraintTop_toBottomOf="@+id/mileage"
-            app:layout_constraintStart_toStartOf="@+id/mileage"/>
+            app:layout_constraintTop_toBottomOf="@+id/vehicleMileage"
+            app:layout_constraintStart_toStartOf="@+id/vehicleMileage"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "900590709424",
-    "firebase_url": "https://garageapp-bb9d4.firebaseio.com",
-    "project_id": "garageapp-bb9d4",
-    "storage_bucket": "garageapp-bb9d4.appspot.com"
+    "project_number": "580505445817",
+    "firebase_url": "https://garageapp-248421.firebaseio.com",
+    "project_id": "garageapp-248421",
+    "storage_bucket": "garageapp-248421.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:900590709424:android:3f1237517f60293d",
+        "mobilesdk_app_id": "1:580505445817:android:3f1237517f60293d",
         "android_client_info": {
           "package_name": "com.douglas.android.garageapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "900590709424-m7i2cko2m5np4pcbprugaurnedd4njq6.apps.googleusercontent.com",
+          "client_id": "580505445817-0s2h8guqu8d8ourage0ffo4mrlr3jk1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.douglas.android.garageapp",
+            "certificate_hash": "bc09e174ebdd1526169d843879d268a7c8a261dc"
+          }
+        },
+        {
+          "client_id": "580505445817-m67imnfl0u75bsnk77clvsq8aub1auof.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAaVhWR_rTPaqgJJv0vI7JyFR8DF32NpB8"
+          "current_key": "AIzaSyAkvUbHdtKG94xlWPJeS5hBin9BStL2epo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "900590709424-m7i2cko2m5np4pcbprugaurnedd4njq6.apps.googleusercontent.com",
+              "client_id": "580505445817-m67imnfl0u75bsnk77clvsq8aub1auof.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
