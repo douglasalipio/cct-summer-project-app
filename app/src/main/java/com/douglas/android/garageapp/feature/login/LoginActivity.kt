@@ -19,16 +19,22 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
-        createMemberButton?.setOnClickListener { registerUser() }
-        registerButton?.setOnClickListener { startActivity(Intent(this, MemberActivity::class.java)) }
+        initComponents()
+    }
+
+    private fun initComponents() {
+        loginButton?.setOnClickListener { startActivity(Intent(this, MemberActivity::class.java)) }
+        createAccountBtn?.setOnClickListener { registerUser() }
     }
 
     override fun onStart() {
         super.onStart()
-        val currentUser = auth.currentUser
-        if (currentUser != null)
-            startActivity(Intent(this, GarageActivity::class.java))
+        validateUser()
+    }
 
+    private fun validateUser() {
+        if (auth.currentUser != null)
+            startActivity(Intent(this, GarageActivity::class.java))
     }
 
     private fun registerUser() {

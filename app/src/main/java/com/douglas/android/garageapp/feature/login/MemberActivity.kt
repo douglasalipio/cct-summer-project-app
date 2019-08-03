@@ -7,6 +7,7 @@ import com.douglas.android.garageapp.GarageActivity
 import com.douglas.android.garageapp.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.member.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.toast
 
 class MemberActivity : AppCompatActivity() {
@@ -16,7 +17,11 @@ class MemberActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.member)
-        doLogin()
+        initComponents()
+    }
+
+    private fun initComponents() {
+        memberLogin?.onClick { doLogin() }
     }
 
     private fun doLogin() {
