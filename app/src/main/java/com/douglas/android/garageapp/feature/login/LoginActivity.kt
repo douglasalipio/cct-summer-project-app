@@ -10,7 +10,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 import kotlinx.android.synthetic.main.login.*
-import kotlinx.android.synthetic.main.member.*
 import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {
@@ -20,19 +19,25 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
-        createMemberButton?.setOnClickListener { doLogin() }
-        memberLogin?.setOnClickListener { startActivity(Intent(this, MemberActivity::class.java)) }
+        createMemberButton?.setOnClickListener { registerUser() }
+        registerButton?.setOnClickListener { startActivity(Intent(this, MemberActivity::class.java)) }
     }
 
-    private fun doLogin() {
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null)
+            startActivity(Intent(this, GarageActivity::class.java))
+
+    }
+
+    private fun registerUser() {
         auth.createUserWithEmailAndPassword(loginEmail?.text.toString(), loginPassword?.text.toString())
             .addOnCompleteListener(this) { task ->
-
-                if (task.isSuccessful) {
+                if (task.isSuccessful)
                     startActivity(Intent(this, GarageActivity::class.java))
-                } else {
+                else
                     toast(task.exception?.message.toString())
-                }
             }
     }
 }

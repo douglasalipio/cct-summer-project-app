@@ -69,13 +69,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/register_member"
+                android:text="login"
                 android:background="@color/colorPrimaryDark"
                 android:textColor="@android:color/white"
                 style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                 app:layout_constraintTop_toBottomOf="@+id/memberPasswordLayout"
                 app:layout_constraintStart_toStartOf="@+id/memberPasswordLayout"
-                android:id="@+id/materialButton"/>
+                android:id="@+id/memberLogin"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
