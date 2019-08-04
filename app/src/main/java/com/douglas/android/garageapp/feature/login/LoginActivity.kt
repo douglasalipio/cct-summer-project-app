@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.douglas.android.garageapp.GarageActivity
 import com.douglas.android.garageapp.R
+import com.douglas.android.garageapp.misc.AppExecutors.Companion.uiContext
+import com.douglas.android.garageapp.misc.launchSilent
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -38,12 +40,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun registerUser() {
-        auth.createUserWithEmailAndPassword(loginEmail?.text.toString(), loginPassword?.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful)
-                    startActivity(Intent(this, GarageActivity::class.java))
-                else
-                    toast(task.exception?.message.toString())
-            }
+        launchSilent(uiContext){
+            auth.createUserWithEmailAndPassword(loginEmail?.text.toString(), loginPassword?.text.toString())
+                .addOnCompleteListener(this@LoginActivity) { task ->
+                    if (task.isSuccessful)
+                        startActivity(Intent(this@LoginActivity, GarageActivity::class.java))
+                    else
+                        toast(task.exception?.message.toString())
+                }
+        }
+
     }
 }

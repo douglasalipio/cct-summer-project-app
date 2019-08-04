@@ -50,7 +50,6 @@ class VehicleDetailFragment : BottomSheetDialogFragment() {
             val modelAdapter =
                 ArrayAdapter(context, R.layout.dropdown_book_service_item, defaultBrands[position].models)
             vehicleModel?.setAdapter(modelAdapter)
-            vehicleModel?.isEnabled = true
         }
     }
 

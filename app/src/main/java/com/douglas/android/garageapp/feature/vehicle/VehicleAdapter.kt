@@ -15,6 +15,7 @@ class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>() 
     private val vehicles = mutableListOf<VehicleModel>()
 
     fun load(vehicles: List<VehicleModel>) {
+        this.vehicles.clear()
         this.vehicles.addAll(vehicles)
         notifyDataSetChanged()
     }

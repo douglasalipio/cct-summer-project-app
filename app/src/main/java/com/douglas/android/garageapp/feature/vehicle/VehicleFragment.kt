@@ -1,6 +1,7 @@
 package com.douglas.android.garageapp.feature.vehicle
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +12,18 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import com.douglas.android.garageapp.R
+import com.douglas.android.garageapp.misc.AppExecutors.Companion.ioContext
+import com.douglas.android.garageapp.misc.AppExecutors.Companion.uiContext
+import com.douglas.android.garageapp.misc.launchSilent
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.vehicle_fragment.*
 import org.jetbrains.anko.support.v4.toast
+import android.os.StrictMode.setThreadPolicy
+import android.os.Build.VERSION.SDK_INT
+import android.os.StrictMode
 
 
 class VehicleFragment : Fragment() {
@@ -34,25 +41,34 @@ class VehicleFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initComponent()
+//        if (SDK_INT > 9) {
+//            val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+//            setThreadPolicy(policy)
+//        }
     }
 
     private fun initComponent() {
-        vehicleRecyclerView?.layoutManager = LinearLayoutManager(context)
-        vehicleRecyclerView?.adapter = vehicleAdapter
+        vehicleRecyclerView?.apply {
+            layoutManager = LinearLayoutManager(context!!)
+            adapter = vehicleAdapter
+            setHasFixedSize(true)
+        }
         addVehicleButton.setOnClickListener { findNavController().navigate(R.id.actionVehicleToVehicleDetailFragment) }
         loadVehicle()
     }
 
     private fun loadVehicle() {
-        databaseReference.child("vehicleModel").addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(databaseError: DatabaseError) {
-                toast("Database error: $databaseError.message")
-            }
+        launchSilent(uiContext) {
+            databaseReference.child("vehicleModel").addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(databaseError: DatabaseError) {
+                    toast("Database error: $databaseError.message")
+                }
 
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val vehicles = dataSnapshot.children.mapNotNull { it.getValue(VehicleModel::class.java) }
-                vehicleAdapter.load(vehicles)
-            }
-        })
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val vehicles = dataSnapshot.children.mapNotNull { it.getValue(VehicleModel::class.java) }
+                    vehicleAdapter.load(vehicles)
+                }
+            })
+        }
     }
 }
