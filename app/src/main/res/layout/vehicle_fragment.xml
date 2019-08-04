@@ -8,6 +8,13 @@
         android:layout_gravity="center"
         tools:context=".feature.vehicle.VehicleFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vehicleRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="88dp"
+            tools:layout_editor_absoluteX="16dp"/>
+
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/addVehicleButton"
             android:layout_width="wrap_content"

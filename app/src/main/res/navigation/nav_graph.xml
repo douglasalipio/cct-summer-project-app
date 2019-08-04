@@ -28,5 +28,10 @@
     <dialog
             android:id="@+id/vehicleDetailFragment"
             android:name="com.douglas.android.garageapp.feature.vehicle.VehicleDetailFragment"
-            android:label="VehicleDetailFragment"/>
+            android:label="VehicleDetailFragment">
+        <argument
+                android:name="vehicleId"
+                app:argType="integer"
+                android:defaultValue="0"/>
+    </dialog>
 </navigation>

@@ -1,8 +1,12 @@
 package com.douglas.android.garageapp.feature.vehicle
 
+import android.content.Context
 import com.google.firebase.database.IgnoreExtraProperties
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.BufferedReader
 
 @IgnoreExtraProperties
 data class VehicleModel(
@@ -13,7 +17,7 @@ data class VehicleModel(
     var mileage: String = ""
 )
 
-data class VehicleInfoModel(
+data class InfoModel(
     @SerializedName("brand")
     @Expose
     var brand: String = "",
@@ -21,3 +25,11 @@ data class VehicleInfoModel(
     @Expose
     var models: List<String> = listOf()
 )
+
+fun infoModelMapper(context: Context): List<InfoModel> {
+    val carListJson = context.assets.open("car_list.json").bufferedReader().use(BufferedReader::readText)
+    val gson = GsonBuilder().create()
+    val infoModels = gson.fromJson(carListJson, Array<InfoModel>::class.java).toList()
+    return infoModels
+}
+

@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cardItem"
+        style="@style/CardView.Light"
+        app:cardUseCompatPadding="true"
+        tools:cardCornerRadius="@dimen/corner_radius"
+        tools:cardUseCompatPadding="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".feature.book.BookFragment">
+        android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonTest"
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NEXT FRAGMENT"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/vehicleItemBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Renault"
+                android:textSize="21sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/vehicleItemModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Laguna"
+                android:textSize="14sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="60dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/vehicleItemRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="223443LG11"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/vehicleItemBrand"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/vehicleItemMileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="25.000KM"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/vehicleItemRegistration"
+                app:layout_constraintStart_toStartOf="@+id/vehicleItemRegistration"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
