@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.douglas.android.garageapp.R
 import kotlinx.android.synthetic.main.book_fragment.*
 import java.util.*
@@ -23,11 +24,7 @@ class BookFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // buttonTest.setOnClickListener {  view.findNavController().navigate(R.id.book_to_bookDetail) }
-//        test.setOnClickListener {
-//            val now = Calendar.getInstance()
-//            val dpd = DatePickerDialog(activity)
-//            dpd.show()
-//        }
+
+        addBookButton?.setOnClickListener { findNavController().navigate(R.id.actionBookToBookDetailFragment) }
     }
 }

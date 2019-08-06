@@ -6,4 +6,8 @@
             <certificates src="@raw/firebase_misc_google"/>
         </trust-anchors>
     </base-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">https://garageapp-248421.firebaseio.com/</domain>
+    </domain-config>
+
 </network-security-config>
