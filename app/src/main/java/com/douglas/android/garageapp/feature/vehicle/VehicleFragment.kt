@@ -33,6 +33,11 @@ class VehicleFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initComponent()
+        setUpToolbar()
+    }
+
+    private fun setUpToolbar() {
+        activity?.title = "Vehicles"
     }
 
     private fun initComponent() {

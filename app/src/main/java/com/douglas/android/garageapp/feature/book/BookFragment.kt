@@ -44,6 +44,11 @@ class BookFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initComponent()
         loadBook()
+        setUpToolbar()
+    }
+
+    private fun setUpToolbar() {
+        activity?.title = "Booking"
     }
 
     private fun initComponent() {

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.douglas.android.garageapp.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import android.widget.ArrayAdapter
+import com.douglas.android.garageapp.feature.receipt.ReceiptModel
 import com.douglas.android.garageapp.feature.vehicle.VehicleModel
 import com.douglas.android.garageapp.misc.AppExecutors
 import com.douglas.android.garageapp.misc.AppExecutors.Companion.uiContext
@@ -65,6 +66,23 @@ class BookDetailFragment : BottomSheetDialogFragment() {
             key?.let {
                 bookModel.uuid = key
                 databaseReference.child("bookModel").child(key).setValue(bookModel)
+                dismiss()
+            }
+        }
+        generateReceipt()
+    }
+
+    private fun generateReceipt() {
+        val key = databaseReference.child("receiptModel").push().key
+        val bookModel = ReceiptModel(
+            servicePrice = bookServicePlan?.text.toString(),
+            deliveryDate = bookVehicle?.text.toString(),
+            vehicleBrand = bookDate?.text.toString()
+        )
+        launchSilent(uiContext) {
+            key?.let {
+                bookModel.uuid = key
+                databaseReference.child("receiptModel").child(key).setValue(bookModel)
                 dismiss()
             }
         }
