@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.book_detail_fragment.*
+import kotlinx.android.synthetic.main.book_detail_fragment.bookDate
+import kotlinx.android.synthetic.main.book_detail_fragment.bookVehicle
+import kotlinx.android.synthetic.main.book_item.*
 import kotlinx.android.synthetic.main.vehicle_detail_fragment.*
 import org.jetbrains.anko.support.v4.toast
 
@@ -47,9 +50,24 @@ class BookDetailFragment : BottomSheetDialogFragment() {
                 bookDate?.setText("$dayOfMonth/$month/$year")
             }
             bookDate?.setOnClickListener { datePickerDialog.show() }
-
+            bookCheckoutBtn.setOnClickListener { payBook() }
         }
+    }
 
+    private fun payBook() {
+        val key = databaseReference.child("bookModel").push().key
+        val bookModel = BookModel(
+            bookPrice = bookServicePlan?.text.toString(),
+            bookVehicle = bookVehicle?.text.toString(),
+            bookDate = bookDate?.text.toString()
+        )
+        launchSilent(uiContext) {
+            key?.let {
+                bookModel.uuid = key
+                databaseReference.child("bookModel").child(key).setValue(bookModel)
+                dismiss()
+            }
+        }
     }
 
     private fun loadVehicle() {
