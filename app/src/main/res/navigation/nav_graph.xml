@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph.xml"
+            app:startDestination="@id/actionHome">
+    <fragment
+            android:id="@+id/actionHome"
+            android:name="com.douglas.android.garageapp.feature.book.BookFragment"
+            android:label="@string/booking_service_label"
+            tools:layout="@layout/book_fragment">
+        <action
+                android:id="@+id/actionBookToBookDetailFragment"
+                app:destination="@id/bookDetailFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/actionVehicle"
+            android:name="com.douglas.android.garageapp.feature.vehicle.VehicleFragment"
+            android:label="@string/vehicle_label"
+            tools:layout="@layout/vehicle_fragment">
+        <action
+                android:id="@+id/actionVehicleToVehicleDetailFragment"
+                app:destination="@id/vehicleDetailFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/actionReceipt"
+            android:name="com.douglas.android.garageapp.feature.receipt.ReceiptFragment"
+            android:label="@string/receiptLabel"
+            tools:layout="@layout/receipt_fragment"/>
+    <dialog
+            android:id="@+id/vehicleDetailFragment"
+            android:name="com.douglas.android.garageapp.feature.vehicle.VehicleDetailFragment"
+            android:label="VehicleDetailFragment">
+        <argument
+                android:name="vehicleId"
+                app:argType="integer"
+                android:defaultValue="0"/>
+    </dialog>
+
+    <dialog
+            android:id="@+id/bookDetailFragment"
+            android:name="com.douglas.android.garageapp.feature.book.BookDetailFragment"
+            android:label="BookDetailFragment">
+        <argument
+                android:name="bookId"
+                app:argType="integer"
+                android:defaultValue="0"/>
+    </dialog>
+</navigation>

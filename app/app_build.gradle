@@ -2,11 +2,24 @@ apply plugin: 'com.android.application'
 
 apply from: '../config/android-common.gradle'
 apply from: '../config/common.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion Versions.compileSdk
+    compileOptions {
+        sourceCompatibility Versions.java
+        targetCompatibility Versions.java
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     defaultConfig {
-        applicationId "com.douglas.android.carageapp"
+        applicationId "com.douglas.android.garageapp"
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdk
         versionCode Versions.releaseVersionCode
@@ -34,9 +47,33 @@ dependencies {
 
     // external dependencies
     implementation ProjectDependencies.supportAppCompat
-    implementation ProjectDependencies.supportDesign
+    implementation ProjectDependencies.coreAndroidX
     implementation ProjectDependencies.recyclerView
     implementation ProjectDependencies.lifecycle
-
+    implementation ProjectDependencies.materialDesign
+    implementation ProjectDependencies.constraintLayout
+    implementation ProjectDependencies.anko
+    implementation ProjectDependencies.navigation
+    implementation ProjectDependencies.navigationUi
+    implementation ProjectDependencies.groupie
+    implementation ProjectDependencies.affolestadBottomSheet
+    implementation ProjectDependencies.wdullaerDatePicker
+    implementation ProjectDependencies.navigation
+    implementation ProjectDependencies.navigationUi
+    implementation ProjectDependencies.koin
+    implementation ProjectDependencies.gson
+    implementation ProjectDependencies.coroutinesAdapter
     testImplementation ProjectDependencies.lifecycleTesting
+
+    implementation 'com.google.firebase:firebase-auth:18.1.0'
+    implementation 'com.google.firebase:firebase-database:18.0.1'
+    implementation 'com.google.firebase:firebase-config:18.0.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.github.marcoscgdev:DialogSheet:2.0.6'
+
 }

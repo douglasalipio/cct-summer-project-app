@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/actionVehicle"
+            android:icon="@drawable/baseline_directions_car_white_24"
+            android:title="@string/vehicles"
+            app:iconTint="@android:color/white"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/actionHome"
+            android:icon="@drawable/baseline_schedule_24"
+            app:iconTint="@android:color/white"
+            android:title="@string/booking_service_label"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/actionReceipt"
+            android:title="@string/receiptLabel"
+            android:icon="@drawable/baseline_receipt_white_24"
+            app:iconTint="@android:color/white"
+            app:showAsAction="ifRoom"/>
+
+</menu>

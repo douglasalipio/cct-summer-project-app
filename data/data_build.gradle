@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-
 apply from: '../config/android-common.gradle'
 apply from: '../config/common.gradle'
 
@@ -15,14 +14,14 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField 'String', "AppId", ""
-            buildConfigField 'String', "AppKey", ""
+            //buildConfigField 'String', "AppId", ""
+            // buildConfigField 'String', "AppKey", ""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-            buildConfigField 'String', "AppId", ""
-            buildConfigField 'String', "AppKey", ""
+            // buildConfigField 'String', "AppId", ""
+            // buildConfigField 'String', "AppKey", ""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -38,4 +37,9 @@ dependencies {
     implementation ProjectDependencies.coroutinesAdapter
     implementation ProjectDependencies.gson
     implementation ProjectDependencies.loggingInterceptor
+    implementation ProjectDependencies.firebase
+    implementation ProjectDependencies.koin
+    // project dependencies
+    implementation project(ProjectModules.domain)
+    implementation 'com.google.firebase:firebase-database:18.0.1'
 }
