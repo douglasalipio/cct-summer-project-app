@@ -1,4 +1,4 @@
-package com.douglas.android.garageapp.feature.book
+package com.douglas.android.garageapp.features.book
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import com.douglas.android.garageapp.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import android.widget.ArrayAdapter
-import com.douglas.android.garageapp.feature.receipt.ReceiptModel
-import com.douglas.android.garageapp.feature.vehicle.VehicleModel
-import com.douglas.android.garageapp.misc.AppExecutors
+import com.douglas.android.garageapp.features.receipt.ReceiptModel
+import com.douglas.android.garageapp.features.vehicle.VehicleModel
 import com.douglas.android.garageapp.misc.AppExecutors.Companion.uiContext
 import com.douglas.android.garageapp.misc.launchSilent
 import com.google.firebase.database.DataSnapshot
@@ -21,8 +20,6 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.book_detail_fragment.*
 import kotlinx.android.synthetic.main.book_detail_fragment.bookDate
 import kotlinx.android.synthetic.main.book_detail_fragment.bookVehicle
-import kotlinx.android.synthetic.main.book_item.*
-import kotlinx.android.synthetic.main.vehicle_detail_fragment.*
 import org.jetbrains.anko.support.v4.toast
 
 class BookDetailFragment : BottomSheetDialogFragment() {

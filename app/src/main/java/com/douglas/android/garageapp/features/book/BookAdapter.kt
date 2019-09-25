@@ -1,4 +1,4 @@
-package com.douglas.android.garageapp.feature.book
+package com.douglas.android.garageapp.features.book
 
 import android.view.LayoutInflater
 import android.view.View

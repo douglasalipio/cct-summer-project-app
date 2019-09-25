@@ -1,4 +1,4 @@
-package com.douglas.android.garageapp.feature.login
+package com.douglas.android.garageapp.features.login
 
 
 import android.content.Intent

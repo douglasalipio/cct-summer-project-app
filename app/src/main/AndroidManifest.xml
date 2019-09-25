@@ -19,14 +19,14 @@
         <activity android:name=".GarageActivity">
         </activity>
 
-        <activity android:name=".feature.login.LoginActivity">
+        <activity android:name=".features.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".feature.login.MemberActivity"/>
+        <activity android:name=".features.login.MemberActivity"/>
     </application>
 
 </manifest>

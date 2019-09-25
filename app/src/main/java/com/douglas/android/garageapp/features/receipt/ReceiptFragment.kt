@@ -1,4 +1,4 @@
-package com.douglas.android.garageapp.feature.receipt
+package com.douglas.android.garageapp.features.receipt
 
 
 import android.os.Bundle

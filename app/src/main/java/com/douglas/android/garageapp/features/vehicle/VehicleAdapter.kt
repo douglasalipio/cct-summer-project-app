@@ -1,7 +1,6 @@
-package com.douglas.android.garageapp.feature.vehicle
+package com.douglas.android.garageapp.features.vehicle
 
 import android.annotation.SuppressLint
-import android.system.Os.bind
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +18,14 @@ class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>() 
         this.vehicles.addAll(vehicles)
         notifyDataSetChanged()
     }
+
+    fun removeAt(position: Int) {
+        vehicles.removeAt(position)
+        notifyItemRemoved(position)
+        notifyDataSetChanged()
+    }
+
+    fun getAt(position: Int) = vehicles[position]
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VehicleViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.vehicle_item, parent, false)

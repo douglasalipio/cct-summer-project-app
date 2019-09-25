@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:padding="8dp"
-        tools:context=".feature.vehicle.VehicleFragment">
+        tools:context=".features.vehicle.VehicleFragment">
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vehicleRecyclerView"

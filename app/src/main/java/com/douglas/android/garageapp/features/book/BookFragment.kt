@@ -1,8 +1,6 @@
-package com.douglas.android.garageapp.feature.book
+package com.douglas.android.garageapp.features.book
 
 
-import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,9 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.douglas.android.garageapp.R
-import com.douglas.android.garageapp.feature.vehicle.VehicleAdapter
-import com.douglas.android.garageapp.feature.vehicle.VehicleDetailFragmentArgs
-import com.douglas.android.garageapp.feature.vehicle.VehicleModel
+import com.douglas.android.garageapp.features.vehicle.VehicleDetailFragmentArgs
 import com.douglas.android.garageapp.misc.AppExecutors
 import com.douglas.android.garageapp.misc.launchSilent
 import com.google.firebase.database.DataSnapshot
@@ -22,9 +18,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.book_fragment.*
-import kotlinx.android.synthetic.main.vehicle_fragment.*
 import org.jetbrains.anko.support.v4.toast
-import java.util.*
 
 
 class BookFragment : Fragment() {

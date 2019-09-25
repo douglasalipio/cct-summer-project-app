@@ -1,13 +1,10 @@
-package com.douglas.android.garageapp.feature.receipt
+package com.douglas.android.garageapp.features.receipt
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.douglas.android.garageapp.R
-import com.douglas.android.garageapp.feature.book.BookModel
-import kotlinx.android.synthetic.main.book_item.view.*
-import kotlinx.android.synthetic.main.book_item.view.bookDate
 import kotlinx.android.synthetic.main.receipt_item.view.*
 
 

@@ -1,6 +1,4 @@
-package com.douglas.android.garageapp.feature.book
-
-import java.util.*
+package com.douglas.android.garageapp.features.book
 
 data class BookModel(
     var uuid: String= "",

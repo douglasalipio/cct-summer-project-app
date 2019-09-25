@@ -1,8 +1,7 @@
-package com.douglas.android.garageapp.feature.vehicle
+package com.douglas.android.garageapp.features.vehicle
 
 import android.content.Context
 import com.google.firebase.database.IgnoreExtraProperties
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
